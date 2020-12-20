@@ -2,11 +2,36 @@ package com.ticonsys.mvvmrecipeapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.ticonsys.mvvmrecipeapp.R
+import com.ticonsys.mvvmrecipeapp.databinding.ActivityMainBinding
+import com.ticonsys.mvvmrecipeapp.internal.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+//    private val navController by lazy {
+//        findNavController(binding.navHostMain.id)
+//    }
+//    private val viewModel by lazy {
+//        ViewModelProvider(
+//            navController.getViewModelStoreOwner(R.id.nav_graph_main),
+//            defaultViewModelProviderFactory
+//        ).get(MainViewModel::class.java)
+//    }
+
+    private val viewModel by viewModels<MainViewModel>()
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        viewModel.searchRecipes(1, "chicken")
     }
 }

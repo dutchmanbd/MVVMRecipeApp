@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.ticonsys.mvvmrecipeapp.ui.fragments.RecipeFragment"
-        android:label="RecipeFragment" />
+        android:label="RecipeFragment" >
+        <argument
+            android:name="recipe_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

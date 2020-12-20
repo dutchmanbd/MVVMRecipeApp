@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
 
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
     id 'dagger.hilt.android.plugin'
 }
 
@@ -37,6 +38,7 @@ android {
     }
     buildFeatures {
         compose true
+        viewBinding true
     }
 
     composeOptions {
@@ -75,13 +77,27 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    // Jetpack Compose Integration
+//    implementation "androidx.navigation:navigation-compose:1.0.0-alpha09"
+
     def retrofit = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
 
-    def hilt = "2.28-alpha"
+    def hilt = "2.29-alpha"
     implementation "com.google.dagger:hilt-android:$hilt"
     kapt "com.google.dagger:hilt-android-compiler:$hilt"
+
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
+    kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+
+    // Activity KTX
+    implementation "androidx.activity:activity-ktx:1.1.0"
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {

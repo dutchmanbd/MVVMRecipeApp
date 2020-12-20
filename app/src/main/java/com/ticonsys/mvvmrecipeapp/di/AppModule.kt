@@ -17,4 +17,5 @@ object AppModule {
     @Provides
     fun provideApplication(@ApplicationContext app: Context): RecipeApp = app as RecipeApp
 
+
 }

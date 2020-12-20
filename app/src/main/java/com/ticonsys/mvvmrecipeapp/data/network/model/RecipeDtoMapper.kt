@@ -2,6 +2,7 @@ package com.ticonsys.mvvmrecipeapp.data.network.model
 
 import com.ticonsys.mvvmrecipeapp.data.domain.model.Recipe
 import com.ticonsys.mvvmrecipeapp.data.domain.util.DomainMapper
+import javax.inject.Inject
 
 class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
     override fun mapToDomainModel(model: RecipeDto): Recipe {
