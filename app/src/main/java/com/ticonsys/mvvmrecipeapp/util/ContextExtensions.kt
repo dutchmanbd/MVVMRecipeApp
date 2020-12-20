@@ -1,4 +1,4 @@
-package com.ticonsys.mvvmrecipeapp.internal
+package com.ticonsys.mvvmrecipeapp.util
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity

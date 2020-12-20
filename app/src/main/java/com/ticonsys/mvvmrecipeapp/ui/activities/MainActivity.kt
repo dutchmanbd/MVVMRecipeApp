@@ -3,11 +3,7 @@ package com.ticonsys.mvvmrecipeapp.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.ticonsys.mvvmrecipeapp.R
 import com.ticonsys.mvvmrecipeapp.databinding.ActivityMainBinding
-import com.ticonsys.mvvmrecipeapp.internal.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +28,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.searchRecipes(1, "chicken")
+//        viewModel.searchRecipes(1, "chicken")
     }
 }

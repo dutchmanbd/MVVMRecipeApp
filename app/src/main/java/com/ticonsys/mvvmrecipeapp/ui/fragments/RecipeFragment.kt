@@ -33,7 +33,7 @@ class RecipeFragment : Fragment(){
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                viewModel.getRecipe(args.recipeId)
+//                viewModel.getRecipe(args.recipeId)
                 val recipe = viewModel.recipe.value
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
